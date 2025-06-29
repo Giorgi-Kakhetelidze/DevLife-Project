@@ -114,6 +114,11 @@ CreateDatingProfileEndpoint.Map(app);
 GetMatchesEndpoint.Map(app);
 SwipeProfileEndpoint.Map(app);
 
+app.MapGroup("/dating/ai")
+   .RequireAuthorization()
+   .WithTags("DatingApp")
+   .MapAiChatEndpoint();
+
 
 app.MapRunFromMeetingsEndpoints();
 
